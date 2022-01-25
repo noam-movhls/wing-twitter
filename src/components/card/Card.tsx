@@ -1,18 +1,40 @@
 import React from "react";
-import { AuthorName, CardContainer, TweetContent, TweetDate } from "./style";
+import {
+  AuthorName,
+  CardContainer,
+  CardHeader,
+  MenuIcon,
+  TweetContent,
+  TweetDate,
+} from "./style";
 
-export interface CardProps {
+export interface TweetProps {
   author: string;
   content: string;
   date: Date;
 }
 
+export interface CardProps extends TweetProps {
+  openDeleteModal: () => void;
+  updateCurrentTweet: () => void;
+}
+
 export default function Card(props: CardProps) {
+  const handleDeleteMenuClick = () => {
+    props.updateCurrentTweet();
+    props.openDeleteModal();
+  };
+
   return (
-    <CardContainer>
-      <AuthorName>{props.author}</AuthorName>
-      <TweetContent>{props.content}</TweetContent>
-      <TweetDate>{props.date.toLocaleString()}</TweetDate>
-    </CardContainer>
+    <>
+      <CardContainer>
+        <CardHeader>
+          <AuthorName>{props.author}</AuthorName>
+          <MenuIcon fontSize="small" onClick={() => handleDeleteMenuClick()} />
+        </CardHeader>
+        <TweetContent>{props.content}</TweetContent>
+        <TweetDate>{props.date.toLocaleString()}</TweetDate>
+      </CardContainer>
+    </>
   );
 }

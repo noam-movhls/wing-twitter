@@ -55,10 +55,15 @@ export const TweetActions = styled.div`
   padding: 8px 0;
 `;
 
-export const CounterBLock = styled.div`
+type OverflowValue = 1 | 0;
+interface CounterBlockProps {
+  overflow: OverflowValue;
+}
+
+export const CounterBLock = styled.div<CounterBlockProps>`
   padding: 0px 16px 0px 0px;
   border-right: 1px solid #bbb;
   margin-right: 16px;
   font-size: 14px;
-  color: #aaa;
+  color: ${({ overflow }) => (overflow ? "red" : "#aaa")};
 `;

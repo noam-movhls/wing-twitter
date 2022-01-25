@@ -14,4 +14,5 @@ Primary.args = {
   author: "Noam",
   content: "dfdfdfdfdfd",
   date: new Date(),
+  openDeleteModal: () => {},
 };

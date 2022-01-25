@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 export const CardContainer = styled.div`
   width: 100%;
@@ -17,6 +18,12 @@ export const CardContainer = styled.div`
   box-sizing: border-box;
 `;
 
+export const CardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const AuthorName = styled.div`
   font-weight: bold;
   font-weight: bold;
@@ -32,4 +39,8 @@ export const TweetDate = styled.div`
   font-size: 12px;
   color: #bbb;
   padding: 4px 0;
+`;
+
+export const MenuIcon = styled(MoreHorizIcon)`
+  cursor: pointer;
 `;

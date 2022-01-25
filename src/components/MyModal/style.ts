@@ -1,6 +1,5 @@
+import { Dialog, DialogActions, DialogTitle } from "@mui/material";
 import styled from "styled-components";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
 
 export const StyledDialog = styled(Dialog)`
   .MuiPaper-root {
@@ -9,6 +8,7 @@ export const StyledDialog = styled(Dialog)`
     padding: 20px;
     box-sizing: border-box;
     border-radius: 15px;
+    min-height: 300px;
   }
 `;
 
@@ -21,5 +21,14 @@ export const StyledDialogTitle = styled(DialogTitle)`
     line-height: 22px;
     letter-spacing: 0.25px;
     font-weight: 600;
+  }
+`;
+
+export const StyledDialogActions = styled(DialogActions)`
+  &.MuiDialogActions-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 `;

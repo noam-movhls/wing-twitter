@@ -1,9 +1,8 @@
 import React from "react";
-import { NewTweetContainer } from "../NewTweet/style";
 import Button from "../../../../components/Button/Button";
 import { ThisIs, Title, WelcomeContainer } from "./style";
 
-export default function Header() {
+export default function Welcome() {
   return (
     <>
       <WelcomeContainer>

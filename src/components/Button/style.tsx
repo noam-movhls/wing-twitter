@@ -13,5 +13,6 @@ export const StyledButton = styled(Button)`
     padding: 0 16px;
     min-height: 36px;
     min-width: 36px;
+    margin: 4px;
   }
 `;

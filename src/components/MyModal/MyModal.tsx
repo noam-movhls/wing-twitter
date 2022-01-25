@@ -1,14 +1,13 @@
 import React from "react";
-import DialogContent from "@material-ui/core/DialogContent";
-import { StyledDialog, StyledDialogTitle } from "./style";
-import { DialogActions, DialogProps } from "@material-ui/core";
+import { StyledDialog, StyledDialogActions, StyledDialogTitle } from "./style";
+import { DialogContent, DialogProps } from "@mui/material";
 
 export interface JSXProps {
   children: JSX.Element[] | JSX.Element | string | false;
 }
 
 export function MyModal(props: DialogProps) {
-  const { maxWidth = "sm", children, ...rest } = props;
+  const { maxWidth = "xs", children, ...rest } = props;
   return (
     <StyledDialog maxWidth={maxWidth} fullWidth {...rest}>
       {children}
@@ -29,5 +28,5 @@ MyModal.Content = function ModalContent(props: JSXProps) {
 };
 
 MyModal.Actions = function ModalActions(props: JSXProps) {
-  return <DialogActions>{props.children}</DialogActions>;
+  return <StyledDialogActions>{props.children}</StyledDialogActions>;
 };
