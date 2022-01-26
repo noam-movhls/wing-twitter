@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TweeterButton from "../../../../components/TweeterButton/TweeterButton";
 import {
   Author,
@@ -17,7 +17,7 @@ export interface NewTweetProps {
 }
 
 export default function NewTweet(props: NewTweetProps) {
-  const { submitTweet } = props;
+  const { submitTweet, inputRef } = props;
   const [newTweet, setNewTweet] = useState<string>("");
 
   const handleOnChange = (val: string) => {
@@ -35,6 +35,7 @@ export default function NewTweet(props: NewTweetProps) {
         <TweetBody>
           <Author>Noam Domovich</Author>
           <CustomInput
+            inputRef={inputRef}
             placeholder=""
             multiline
             onChange={(e) => handleOnChange(e.target.value)}

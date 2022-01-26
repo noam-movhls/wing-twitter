@@ -1,4 +1,5 @@
 import React from "react";
+import { TweetProps } from "../../pages/Feed/types";
 import {
   AuthorName,
   CardContainer,
@@ -8,32 +9,28 @@ import {
   TweetDate,
 } from "./style";
 
-export interface TweetProps {
-  author: string;
-  content: string;
-  date: string;
-}
-
 export interface CardProps extends TweetProps {
   openDeleteModal: () => void;
   updateCurrentTweet: () => void;
 }
 
 export default function Card(props: CardProps) {
+  const { author, content, date, updateCurrentTweet, openDeleteModal } = props;
+
   const handleDeleteMenuClick = () => {
-    props.updateCurrentTweet();
-    props.openDeleteModal();
+    updateCurrentTweet();
+    openDeleteModal();
   };
 
   return (
     <>
       <CardContainer>
         <CardHeader>
-          <AuthorName>{props.author}</AuthorName>
+          <AuthorName>{author}</AuthorName>
           <MenuIcon fontSize="small" onClick={() => handleDeleteMenuClick()} />
         </CardHeader>
-        <TweetContent>{props.content}</TweetContent>
-        <TweetDate>{props.date.toLocaleString()}</TweetDate>
+        <TweetContent>{content}</TweetContent>
+        <TweetDate>{date.toLocaleString()}</TweetDate>
       </CardContainer>
     </>
   );

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Card, { TweetProps } from "../../components/card/Card";
+import React, { useEffect, useRef, useState } from "react";
+import Card from "../../components/card/Card";
 import {
   formatDate,
   parseJSON,
@@ -10,12 +10,13 @@ import DeleteTweet from "./components/DeleteTweet/DeleteTweet";
 import NewTweet from "./components/NewTweet/NewTweet";
 import Welcome from "./components/Welcome/Welcome";
 import { FeedList, FeedPage } from "./style";
+import { TweetProps } from "./types";
 
 export default function Feed() {
   const [data, setData] = useState<TweetProps[]>([]);
   const [modalMode, setModalMode] = useState(false);
   const [currentTweetIdx, setCurrentTweetIdx] = useState<number | null>(null);
-
+  const inputRef = useRef<any>(null);
   useEffect(() => {
     const localData = window.localStorage.getItem("data");
     const parseData = localData ? (parseJSON(localData) as TweetProps[]) : [];
@@ -56,7 +57,7 @@ export default function Feed() {
 
   return (
     <FeedPage>
-      <NewTweet submitTweet={handleSubmitNewTweet} />
+      <NewTweet submitTweet={handleSubmitNewTweet} inputRef={inputRef} />
       <FeedList>
         {data?.length > 0 ? (
           data
@@ -74,7 +75,7 @@ export default function Feed() {
               />
             ))
         ) : (
-          <Welcome />
+          <Welcome inputRef={inputRef} />
         )}
       </FeedList>
       <DeleteTweet

@@ -3,3 +3,9 @@ export interface JSXProps {
 }
 
 export type BtnTypes = "primary" | "secondary" | "danger";
+
+export interface TweetProps {
+  author: string;
+  content: string;
+  date: string;
+}

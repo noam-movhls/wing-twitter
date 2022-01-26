@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { TweetProps } from "../components/card/Card";
+import { TweetProps } from "./Feed/types";
 
 export function parseJSON<T>(value: string | null): T | undefined {
   try {
