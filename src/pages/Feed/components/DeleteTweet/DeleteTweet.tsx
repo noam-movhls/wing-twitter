@@ -1,5 +1,5 @@
 import React from "react";
-import TweeterButton from "../../../../components/Button/Button";
+import TweeterButton from "../../../../components/TweeterButton/TweeterButton";
 import { MyModal } from "../../../../components/MyModal/MyModal";
 
 export interface DeleteTweetModalProps {
@@ -26,10 +26,18 @@ export default function DeleteTweet(props: DeleteTweetModalProps) {
           results.
         </MyModal.Content>
         <MyModal.Actions>
-          <TweeterButton fullWidth onClick={() => handleDeleteTweet()}>
+          <TweeterButton
+            btntype="danger"
+            fullWidth
+            onClick={() => handleDeleteTweet()}
+          >
             Delete
           </TweeterButton>
-          <TweeterButton fullWidth onClick={() => closeModalFunc()}>
+          <TweeterButton
+            btntype="secondary"
+            fullWidth
+            onClick={() => closeModalFunc()}
+          >
             Cancel
           </TweeterButton>
         </MyModal.Actions>

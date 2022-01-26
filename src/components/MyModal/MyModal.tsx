@@ -1,10 +1,7 @@
 import React from "react";
 import { StyledDialog, StyledDialogActions, StyledDialogTitle } from "./style";
 import { DialogContent, DialogProps } from "@mui/material";
-
-export interface JSXProps {
-  children: JSX.Element[] | JSX.Element | string | false;
-}
+import { JSXProps } from "../../pages/Feed/types";
 
 export function MyModal(props: DialogProps) {
   const { maxWidth = "xs", children, ...rest } = props;

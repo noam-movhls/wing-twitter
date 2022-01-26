@@ -11,7 +11,7 @@ import {
 export interface TweetProps {
   author: string;
   content: string;
-  date: Date;
+  date: string;
 }
 
 export interface CardProps extends TweetProps {

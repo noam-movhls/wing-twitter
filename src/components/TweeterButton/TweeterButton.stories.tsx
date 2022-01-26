@@ -1,14 +1,13 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { ButtonProps } from "@material-ui/core";
-import TweeterButton from "./Button";
+import TweeterButton, { MyButtonProps } from "./TweeterButton";
 
 export default {
   component: TweeterButton,
   title: "Component/TweeterButton",
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <TweeterButton {...args} />;
+const Template: Story<MyButtonProps> = (args) => <TweeterButton {...args} />;
 
 const buttonClick = () => {};
 

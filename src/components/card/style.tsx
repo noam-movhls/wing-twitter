@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { appFont, gray, strongGray } from "../../globalStyle";
 
 export const CardContainer = styled.div`
   width: 100%;
@@ -8,11 +9,11 @@ export const CardContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
 
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-family: ${appFont};
   font-size: 12px;
   line-height: 16px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid ${gray};
+  border-bottom: 1px solid ${gray};
   border-radius: 5px;
   padding: 16px;
   box-sizing: border-box;
@@ -37,7 +38,7 @@ export const TweetContent = styled.div`
 
 export const TweetDate = styled.div`
   font-size: 12px;
-  color: #bbb;
+  color: ${strongGray};
   padding: 4px 0;
 `;
 

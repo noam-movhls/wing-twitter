@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Card, { TweetProps } from "../../components/card/Card";
-import { parseJSON, sortDatesInDesc, updateLocalStorage } from "../utils";
+import {
+  formatDate,
+  parseJSON,
+  sortDatesInDesc,
+  updateLocalStorage,
+} from "../utils";
 import DeleteTweet from "./components/DeleteTweet/DeleteTweet";
 import NewTweet from "./components/NewTweet/NewTweet";
 import Welcome from "./components/Welcome/Welcome";
@@ -20,7 +25,11 @@ export default function Feed() {
   const handleSubmitNewTweet = (newTweet: string) => {
     const updatedData = [
       ...data,
-      { author: "Noam", content: newTweet, date: new Date() },
+      {
+        author: "Noam Domovich",
+        content: newTweet,
+        date: new Date().toISOString(),
+      },
     ];
     setData(updatedData);
     updateLocalStorage("data", JSON.stringify(updatedData));
@@ -59,7 +68,7 @@ export default function Feed() {
                 key={i}
                 author={item.author}
                 content={item.content}
-                date={item.date}
+                date={formatDate(item.date, "h:mm a · MMM d, yyyy")}
                 openDeleteModal={handleOpenModal}
                 updateCurrentTweet={() => setCurrentTweetIdx(i)}
               />

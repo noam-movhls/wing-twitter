@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-export const AppStyle = styled.div`
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-`;
-
-export const blue = "rgb(29, 155, 240)"; // #0058B9, 100%
+export const blue = "rgb(74, 153, 233)"; // #0058B9, 100%
 export const white = "white";
-export const red = "red";
-export const strongGray = "#aaa";
-export const gray = "#ccc";
+export const red = "rgb(245,33,46)";
+export const black = "rgb(17,20,25)";
+export const strongGray = "rgb(133,144,153)";
+export const gray = "rgb(237,236,236)";
 export const lightGray = "#eee";
 
-export const appFont = "AvertaStd-Regular";
-export const appFontThin = "AvertaStd-Thin";
-export const appFontBold = "AvertaStd-Bold";
+export const appFont =
+  "'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif";
 
 export const mobile = "600px";
+
+export const AppStyle = styled.div`
+  font-family: ${appFont};
+`;

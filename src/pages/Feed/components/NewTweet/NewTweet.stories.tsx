@@ -1,7 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import NewTweet from "./NewTweet";
-import { NewTweetProps } from "../../types";
+import NewTweet, { NewTweetProps } from "./NewTweet";
 
 export default {
   component: NewTweet,
@@ -12,5 +11,5 @@ const Template: Story<NewTweetProps> = (args) => <NewTweet {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  submitTweet: (val) => console.log(val),
+  submitTweet: (val) => {},
 };

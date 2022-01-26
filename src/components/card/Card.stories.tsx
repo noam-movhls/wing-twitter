@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   author: "Noam",
-  content: "dfdfdfdfdfd",
-  date: new Date(),
+  content: "content content content",
+  date: new Date().toDateString(),
   openDeleteModal: () => {},
 };

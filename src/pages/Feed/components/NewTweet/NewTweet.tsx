@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import TweeterButton from "../../../../components/Button/Button";
-import { NewTweetProps } from "../../types";
+import TweeterButton from "../../../../components/TweeterButton/TweeterButton";
 import {
   Author,
   CounterBLock,
@@ -12,12 +11,16 @@ import {
 
 export const MAX_TWEET_LENGTH = 280;
 
+export interface NewTweetProps {
+  submitTweet: (newTweet: string) => void;
+  inputRef?: any;
+}
+
 export default function NewTweet(props: NewTweetProps) {
   const { submitTweet } = props;
   const [newTweet, setNewTweet] = useState<string>("");
 
   const handleOnChange = (val: string) => {
-    // todo debounce
     setNewTweet(val);
   };
 
@@ -45,6 +48,7 @@ export default function NewTweet(props: NewTweetProps) {
           <TweeterButton
             onClick={() => handleSubmitNewTweet()}
             disabled={newTweet.length > MAX_TWEET_LENGTH}
+            btntype="primary"
           >
             Tweet
           </TweeterButton>
