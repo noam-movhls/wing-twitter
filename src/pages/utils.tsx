@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { TweetProps } from "./Feed/types";
+import { Tweet } from "./Feed/types";
 
 export function parseJSON<T>(value: string | null): T | undefined {
   try {
@@ -10,7 +10,7 @@ export function parseJSON<T>(value: string | null): T | undefined {
   }
 }
 
-export function sortDatesInDesc(a: TweetProps, b: TweetProps) {
+export function sortDatesInDesc(a: Tweet, b: Tweet) {
   return new Date(b.date).getTime() - new Date(a.date).getTime();
 }
 

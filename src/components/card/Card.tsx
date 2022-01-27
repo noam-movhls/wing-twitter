@@ -1,5 +1,5 @@
 import React from "react";
-import { TweetProps } from "../../pages/Feed/types";
+import { Tweet } from "../../pages/Feed/types";
 import {
   AuthorName,
   CardContainer,
@@ -9,7 +9,7 @@ import {
   TweetDate,
 } from "./style";
 
-export interface CardProps extends TweetProps {
+export interface CardProps extends Tweet {
   openDeleteModal: () => void;
   updateCurrentTweet: () => void;
 }

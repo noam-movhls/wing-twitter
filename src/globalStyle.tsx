@@ -11,8 +11,6 @@ export const lightGray = "#eee";
 export const appFont =
   "'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif";
 
-export const mobile = "600px";
-
 export const AppStyle = styled.div`
   font-family: ${appFont};
 `;

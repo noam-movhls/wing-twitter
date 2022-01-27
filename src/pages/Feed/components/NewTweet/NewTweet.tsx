@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
-import TweeterButton from "../../../../components/TweeterButton/TweeterButton";
+import React, { useState } from "react";
+import TwitterButton from "../../../../components/TwitterButton/TwitterButton";
 import {
   Author,
-  CounterBLock,
+  CounterBlock,
   CustomInput,
   NewTweetContainer,
   TweetActions,
@@ -43,16 +43,18 @@ export default function NewTweet(props: NewTweetProps) {
           />
         </TweetBody>
         <TweetActions>
-          <CounterBLock overflow={newTweet.length > MAX_TWEET_LENGTH ? 1 : 0}>
+          <CounterBlock reachedLimit={newTweet.length > MAX_TWEET_LENGTH}>
             {newTweet.length}
-          </CounterBLock>
-          <TweeterButton
+          </CounterBlock>
+          <TwitterButton
             onClick={() => handleSubmitNewTweet()}
-            disabled={newTweet.length > MAX_TWEET_LENGTH}
+            disabled={
+              newTweet.length === 0 || newTweet.length > MAX_TWEET_LENGTH
+            }
             btntype="primary"
           >
             Tweet
-          </TweeterButton>
+          </TwitterButton>
         </TweetActions>
       </NewTweetContainer>
     </>

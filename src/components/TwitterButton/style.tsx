@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import styled from "styled-components";
 import { black, blue, gray, red, white } from "../../globalStyle";
-import { MyButtonProps } from "./TweeterButton";
+import { MyButtonProps } from "./TwitterButton";
 
 export const StyledButton = styled(Button)<MyButtonProps>`
   &.MuiButtonBase-root {

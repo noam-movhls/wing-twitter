@@ -1,14 +1,14 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import DeleteTweet, { DeleteTweetModalProps } from "./DeleteTweet";
+import DeleteTweetModal, { DeleteTweetModalProps } from "./DeleteTweetModal";
 
 export default {
-  component: DeleteTweet,
+  component: DeleteTweetModal,
   title: "Feed/DeleteTweet",
 } as Meta;
 
 const Template: Story<DeleteTweetModalProps> = (args) => (
-  <DeleteTweet {...args} />
+  <DeleteTweetModal {...args} />
 );
 
 export const Primary = Template.bind({});

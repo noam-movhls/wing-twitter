@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
-import Card from "../../components/card/Card";
+import Card from "../../components/Card/Card";
 import {
   formatDate,
   parseJSON,
   sortDatesInDesc,
   updateLocalStorage,
 } from "../utils";
-import DeleteTweet from "./components/DeleteTweet/DeleteTweet";
+import DeleteTweetModal from "./components/DeleteTweet/DeleteTweetModal";
 import NewTweet from "./components/NewTweet/NewTweet";
 import Welcome from "./components/Welcome/Welcome";
 import { FeedList, FeedPage } from "./style";
-import { TweetProps } from "./types";
+import { Tweet } from "./types";
 
 export default function Feed() {
-  const [data, setData] = useState<TweetProps[]>([]);
+  const [data, setData] = useState<Tweet[]>([]);
   const [modalMode, setModalMode] = useState(false);
   const [currentTweetIdx, setCurrentTweetIdx] = useState<number | null>(null);
   const inputRef = useRef<any>(null);
   useEffect(() => {
     const localData = window.localStorage.getItem("data");
-    const parseData = localData ? (parseJSON(localData) as TweetProps[]) : [];
+    const parseData = localData ? (parseJSON(localData) as Tweet[]) : [];
     setData(parseData);
   }, []);
 
@@ -78,7 +78,7 @@ export default function Feed() {
           <Welcome inputRef={inputRef} />
         )}
       </FeedList>
-      <DeleteTweet
+      <DeleteTweetModal
         modalMode={modalMode}
         closeModalFunc={handleCloseModal}
         deleteModalFunc={handleDeleteTweet}

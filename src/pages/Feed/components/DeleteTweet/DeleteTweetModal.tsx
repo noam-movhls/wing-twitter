@@ -1,6 +1,6 @@
 import React from "react";
-import TweeterButton from "../../../../components/TweeterButton/TweeterButton";
-import { MyModal } from "../../../../components/MyModal/MyModal";
+import TwitterButton from "../../../../components/TwitterButton/TwitterButton";
+import { Modal } from "../../../../components/Modal/Modal";
 
 export interface DeleteTweetModalProps {
   modalMode: boolean;
@@ -8,7 +8,7 @@ export interface DeleteTweetModalProps {
   deleteModalFunc: () => void;
 }
 
-export default function DeleteTweet(props: DeleteTweetModalProps) {
+export default function DeleteTweetModal(props: DeleteTweetModalProps) {
   const { modalMode, closeModalFunc, deleteModalFunc } = props;
 
   const handleDeleteTweet = () => {
@@ -18,30 +18,30 @@ export default function DeleteTweet(props: DeleteTweetModalProps) {
 
   return (
     <>
-      <MyModal open={modalMode}>
-        <MyModal.Title>Delete Tweet?</MyModal.Title>
-        <MyModal.Content>
+      <Modal open={modalMode}>
+        <Modal.Title>Delete Tweet?</Modal.Title>
+        <Modal.Content>
           This can't be undone and it will be removed from your profile, the
           timeline of any accounts that follow you, and from Twitter search
           results.
-        </MyModal.Content>
-        <MyModal.Actions>
-          <TweeterButton
+        </Modal.Content>
+        <Modal.Actions>
+          <TwitterButton
             btntype="danger"
             fullWidth
             onClick={() => handleDeleteTweet()}
           >
             Delete
-          </TweeterButton>
-          <TweeterButton
+          </TwitterButton>
+          <TwitterButton
             btntype="secondary"
             fullWidth
             onClick={() => closeModalFunc()}
           >
             Cancel
-          </TweeterButton>
-        </MyModal.Actions>
-      </MyModal>
+          </TwitterButton>
+        </Modal.Actions>
+      </Modal>
     </>
   );
 }

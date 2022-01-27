@@ -56,15 +56,14 @@ export const TweetActions = styled.div`
   padding: 8px 0;
 `;
 
-type OverflowValue = 1 | 0;
 interface CounterBlockProps {
-  overflow: OverflowValue;
+  reachedLimit: boolean;
 }
 
-export const CounterBLock = styled.div<CounterBlockProps>`
+export const CounterBlock = styled.div<CounterBlockProps>`
   padding: 0px 16px 0px 0px;
   border-right: 1px solid ${gray};
   margin-right: 16px;
   font-size: 14px;
-  color: ${({ overflow }) => (overflow ? red : strongGray)};
+  color: ${({ reachedLimit }) => (reachedLimit ? red : strongGray)};
 `;
